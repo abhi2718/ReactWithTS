@@ -4,14 +4,13 @@ type GreetProps = {
   count?: number;
 };
 
-export const Greet = (props: GreetProps) => {
-  const {count=0,name} = props;
+export const Greet = ({count=0,name,handleSubmit}: GreetProps) => {
   return (
     <div>
       <p>Welcome {name} !</p>
       <button
         onClick={() => {
-          props.handleSubmit();
+          handleSubmit();
         }}
       >
         Click Me {count}
