@@ -1,6 +1,9 @@
 // https://www.youtube.com/watch?v=4Ml7Lp_QcSo&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&index=8
+// 11 lecture completed 
+import { useContext} from "react";
 import "./App.css";
 import { CustomButton } from "./components/Button";
+import { CountScreen } from "./components/context/count";
 import { Greet } from "./components/Greet";
 import { HoldChildComponent } from "./components/HoldChildComponent";
 import { Input } from "./components/Input";
@@ -8,7 +11,7 @@ import { Person } from "./components/Person";
 import { Auth } from "./components/states/Auth";
 import { Status } from "./components/Status";
 import { StyleProps } from "./components/StyleProps";
-
+import { CountContext } from "./components/context/count";
 function App() {
   const personName = {
     firstName: "John",
@@ -32,6 +35,7 @@ function App() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     console.log(event);
   };
+  const count = useContext(CountContext);
   return (
     <div className="App">
       <Greet
@@ -69,7 +73,9 @@ function App() {
         }}
       />
       <Auth />
-    </div>
+      <CountScreen />
+      <p>{count}</p>
+      </div>
   );
 }
 
