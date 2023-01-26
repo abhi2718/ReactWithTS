@@ -12,6 +12,8 @@ import { Auth } from "./components/states/Auth";
 import { Status } from "./components/Status";
 import { StyleProps } from "./components/StyleProps";
 import { CountContext } from "./components/context/count";
+import { UseRef } from "./components/useRef/UseRef";
+import { TimmerComponent } from "./components/timmer/Timmer";
 function App() {
   const personName = {
     firstName: "John",
@@ -75,6 +77,8 @@ function App() {
       <Auth />
       <CountScreen />
       <p>{count}</p>
+      <UseRef />
+      <TimmerComponent />
       </div>
   );
 }
